@@ -105,15 +105,15 @@ namespace EventManagementSystem.Infrastructure.Services
             _unitOfWork.Events.Update(eventEntity);
         }
 
-        //private void UpdateEvent(EventCreateUpdateDto eventCreateUpdateDto, Event eventEntity)
-        //{
-        //    eventEntity.EventName = eventCreateUpdateDto.Name;
-        //    eventEntity.EventDescription = eventCreateUpdateDto.Description;
-        //    eventEntity.EventDate = eventCreateUpdateDto.Date;
-        //    eventEntity.Location = eventCreateUpdateDto.Location;
-        //    eventEntity.Capacity = eventCreateUpdateDto.Capacity;
-        //    eventEntity.CategoryId = eventCreateUpdateDto.CategoryId;
-        //}
+        private void UpdateEventUsingChangeTracker(EventDto eventDto, Event eventEntity)
+        {
+            eventEntity.EventName = eventDto.Name;
+            eventEntity.EventDescription = eventDto.Description;
+            eventEntity.EventDate = eventDto.Date;
+            eventEntity.Location = eventDto.Location;
+            eventEntity.Capacity = eventDto.Capacity;
+            eventEntity.CategoryId = eventDto.CategoryId;
+        }
 
 
 
